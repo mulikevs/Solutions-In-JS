@@ -1,0 +1,35 @@
+Prime Time
+Have the function PrimeTime(num) take the num parameter being passed and return the string true if the parameter is a prime number, otherwise return the
+string false. The range will be between 1 and 2^16.
+Examples
+Input: 19
+Output: true
+Input: 110
+Output: false
+function PrimeTime(num) {
+var hinge = Math.floor(Math.sqrt(num));
+var i = 2;
+var test = true;
+//hardcode correct answers for 1 and 2
+if (num === 1) {
+return false
+}
+else if (num === 2) {
+return true
+}
+//run a loop to see if the number has any integral factors (aside from 1)
+else {
+while (i <= hinge && test === true) {
+if (num % i !== 0) {
+i++;
+}
+else {
+test = false;
+}
+}
+return test
+}
+}
+// keep this function call here
+// to see how to enter arguments in JavaScript scroll down
+PrimeTime(readline());
